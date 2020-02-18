@@ -1,10 +1,10 @@
 {
-  "name": "@nivo/radar",
-  "version": "0.61.1",
+  "name": "ejs-radar",
+  "version": "0.61.3",
   "license": "MIT",
   "author": {
-    "name": "Raphaël Benitte",
-    "url": "https://github.com/plouc"
+    "name": "Emilio Jeldes",
+    "url": "https://github.com/EmilioJeldes"
   },
   "keywords": [
     "nivo",
