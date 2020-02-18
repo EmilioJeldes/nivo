@@ -24,6 +24,7 @@ import RadarTooltip from './RadarTooltip'
 import RadarDots from './RadarDots'
 import { RadarDefaultProps, RadarPropTypes } from './props'
 import RadarInnerGrid from './RadarInnerGrid'
+import RadarBackground from './RadarBackground'
 
 const Radar = memo(
     ({
@@ -58,6 +59,7 @@ const Radar = memo(
         tooltipFormat,
         legends,
         displayInnerGrid,
+        backgroundComponent
     }) => {
         const getIndex = useMemo(() => getAccessorFor(indexBy), [indexBy])
         const indices = useMemo(() => data.map(getIndex), [data, getIndex])
@@ -119,6 +121,7 @@ const Radar = memo(
                         label={gridLabel}
                         labelOffset={gridLabelOffset}
                     />
+                    <RadarBackground background={backgroundComponent} radius={radius} />
                     <RadarShapes
                         data={data}
                         keys={keys}

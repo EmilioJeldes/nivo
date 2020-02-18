@@ -48,6 +48,8 @@ export const RadarPropTypes = {
 
     legends: PropTypes.arrayOf(PropTypes.shape(LegendPropShape)).isRequired,
 
+    backgroundComponent: PropTypes.func,
+
     ...motionPropTypes,
 }
 

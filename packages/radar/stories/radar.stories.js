@@ -7,7 +7,7 @@ import { Radar } from '../src'
 const commonProperties = {
     width: 900,
     height: 500,
-    margin: { top: 60, right: 80, bottom: 20, left: 80 },
+    margin: { top: 60, right: 80, bottom: 60, left: 80 },
     ...generateWinesTastes(),
     indexBy: 'taste',
     animate: true,
