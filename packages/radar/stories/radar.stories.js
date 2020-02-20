@@ -6,8 +6,8 @@ import { Radar } from '../src'
 
 const commonProperties = {
     width: 900,
-    height: 500,
-    margin: { top: 60, right: 80, bottom: 60, left: 80 },
+    height: 600,
+    margin: { top: 80, right: 80, bottom: 80, left: 80 },
     ...generateWinesTastes(),
     indexBy: 'taste',
     animate: true,
@@ -150,4 +150,26 @@ const theme = {
 
 stories.add('display inner grid', () => (
     <Radar {...commonProperties} theme={theme} displayInnerGrid={true} />
+))
+
+// prettier-ignore
+const background =
+    <g>
+        <defs>
+            <linearGradient id="a" x1="446.83" y1="-209.26" x2="446.83" y2="538.1" gradientTransform="translate(0 284)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stopColor="#f13a00"/>
+                <stop offset="1" stopColor="#eeba37"/>
+            </linearGradient>
+        </defs>
+        <path d="M826.83,448.42c0-116.27-48.9-220.74-126.61-292.64h0c-2.56,7.52-15.39,11.08-23.17,4.46h0c-62.54-53.41-142.75-85.5-230.22-85.5s-167.51,32-230,85.33l-.2.17c-7.77,6.63-20.61,3.06-23.17-4.45C115.73,227.68,66.83,332.15,66.83,448.42s48.9,220.74,126.61,292.64h0c2.56-7.52,15.39-11.08,23.17-4.46l-.17-.15C279,790,359.28,822.1,446.83,822.1S614.66,790,677.22,736.45l-.17.15c7.77-6.63,20.61-3.06,23.17,4.46C777.93,669.15,826.83,564.69,826.83,448.42Zm-137,232.14h0c-60.45,67.53-146.93,109.8-243,109.8s-182.51-42.28-243-109.8h0c-3.89,6.94-19.24,10.35-26,3h0c-52-63.42-83.32-145.48-83.32-235.1s31.34-171.67,83.32-235.1c6.73-7.39,22.08-4,26,3,60.45-67.53,146.93-109.8,243-109.8s182.52,42.28,243,109.8c3.89-6.94,19.24-10.35,26-3h0c52,63.42,83.32,145.48,83.32,235.1s-31.34,171.68-83.32,235.1h0C709,690.9,693.68,687.49,689.83,680.56Z" fill="url(#a)"/>
+    </g>
+
+stories.add('custom background, with inner grid and custom label', () => (
+    <Radar
+        gridLabel={LabelComponent}
+        {...commonProperties}
+        backgroundComponent={background}
+        theme={theme}
+        displayInnerGrid={true}
+    />
 ))

@@ -59,7 +59,7 @@ const Radar = memo(
         tooltipFormat,
         legends,
         displayInnerGrid,
-        backgroundComponent
+        backgroundComponent,
     }) => {
         const getIndex = useMemo(() => getAccessorFor(indexBy), [indexBy])
         const indices = useMemo(() => data.map(getIndex), [data, getIndex])
@@ -112,6 +112,7 @@ const Radar = memo(
         return (
             <SvgWrapper width={outerWidth} height={outerHeight} margin={margin} theme={theme}>
                 <g transform={`translate(${centerX}, ${centerY})`}>
+                    <RadarBackground background={backgroundComponent} radius={radius} />
                     <RadarGrid
                         levels={gridLevels}
                         shape={gridShape}
@@ -121,7 +122,6 @@ const Radar = memo(
                         label={gridLabel}
                         labelOffset={gridLabelOffset}
                     />
-                    <RadarBackground background={backgroundComponent} radius={radius} />
                     <RadarShapes
                         data={data}
                         keys={keys}
